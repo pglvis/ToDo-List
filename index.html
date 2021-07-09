@@ -1,0 +1,25 @@
+
+<html>
+	<head>
+	</head>
+
+	<body class="container" ng-app="myApp" ng-controller="todo">
+
+		<h2>My To-do List</h2>
+
+		<form ng-submit="todoAdd()">
+			<input type="text" ng-model="todoInput" size="50">
+			<input type="submit" value="Add New">
+		</form>
+
+		<div ng-repeat="x in todoList">
+			<input type="checkbox" ng-model="x.done">
+      <span class="task" ng-bind="x.todoText"></span>
+		</div>
+
+    <button ng-click="remove()"> Remove from List </button>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
